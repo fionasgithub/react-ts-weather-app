@@ -36,7 +36,7 @@ const weatherTypes: Record<WeatherType, number[]> = {
 };
 
 const weatherIcons: Record<TimeOfDay, Record<WeatherType, JSX.Element>> = {
-  day: {
+  Day: {
     [WEATHER_TYPES.CLEAR]: <DayClear />,
     [WEATHER_TYPES.CLOUDY]: <DayCloudy />,
     [WEATHER_TYPES.CLOUDY_FOG]: <DayCloudyFog />,
@@ -45,7 +45,7 @@ const weatherIcons: Record<TimeOfDay, Record<WeatherType, JSX.Element>> = {
     [WEATHER_TYPES.SNOWING]: <DaySnowing />,
     [WEATHER_TYPES.THUNDERSTORM]: <DayThunderstorm />,
   },
-  night: {
+  Night: {
     [WEATHER_TYPES.CLEAR]: <NightClear />,
     [WEATHER_TYPES.CLOUDY]: <NightCloudy />,
     [WEATHER_TYPES.CLOUDY_FOG]: <NightCloudyFog />,

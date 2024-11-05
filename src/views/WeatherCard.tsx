@@ -6,7 +6,7 @@ import RefreshIcon from "@/assets/images/refresh.svg?react";
 import LoadingIcon from "@/assets/images/loading.svg?react";
 import CogIcon from "@/assets/images/cog.svg?react";
 import dayjs from "dayjs";
-import { WeatherElement, Pages } from "@/types";
+import { WeatherElement, Pages, TimeOfDay } from "@/types";
 
 const WeatherCardWrapper = styled.div`
   position: relative;
@@ -115,11 +115,13 @@ const Cog = styled(CogIcon)`
 `;
 
 const WeatherCard = ({
+  moment = "Day",
   locationName,
   weatherElement,
   fetchData,
   handleCurrentPageChange,
 }: {
+  moment: TimeOfDay;
   locationName: string;
   weatherElement: WeatherElement;
   fetchData: () => Promise<void>;
@@ -134,7 +136,7 @@ const WeatherCard = ({
         <Temperature>
           {Math.round(weatherElement.temperature)} <Celsius>°C</Celsius>
         </Temperature>
-        <WeatherIcon weatherCode={11} moment="day" />
+        <WeatherIcon weatherCode={11} moment={moment} />
       </CurrentWeather>
       <AirFlow>
         <AirFlowIcon /> {weatherElement.windSpeed} mi/h

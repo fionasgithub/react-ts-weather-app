@@ -61,6 +61,7 @@ function App() {
       <Container>
         {currentPage === "WeatherCard" && (
           <WeatherCard
+            moment={moment}
             locationName={locationName}
             weatherElement={weatherElement}
             fetchData={() => fetchData(locationKey)}
