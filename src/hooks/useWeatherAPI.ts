@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { WeatherElement, SunData } from "@/types";
 
-const BASE_URL = "http://dataservice.accuweather.com";
+const BASE_URL = "https://dataservice.accuweather.com";
 const API_KEY = import.meta.env.VITE_APP_ACCUWEATHER_API_KEY;
 
 const fetchCurrentWeather = (locationKey: string) => {
