@@ -38,7 +38,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload static files as artifact
-        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
