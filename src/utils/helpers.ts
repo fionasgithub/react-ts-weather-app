@@ -6,5 +6,5 @@ export function getMoment(sunData: SunData): TimeOfDay {
   const sunrise = dayjs(sunData.Rise);
   const sunset = dayjs(sunData.Set);
 
-  return now.isAfter(sunrise) && now.isBefore(sunset) ? "day" : "night";
+  return now.isAfter(sunrise) && now.isBefore(sunset) ? "Day" : "Night";
 }

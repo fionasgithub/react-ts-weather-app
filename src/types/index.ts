@@ -10,7 +10,7 @@ export enum WEATHER_TYPES {
 
 export type WeatherType = (typeof WEATHER_TYPES)[keyof typeof WEATHER_TYPES];
 
-export type TimeOfDay = "day" | "night";
+export type TimeOfDay = "Day" | "Night";
 
 export interface SunData {
   Rise: string;

@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { getMoment } from "@/utils/helpers";
 import { WeatherElement, SunData } from "@/types";
 
 const BASE_URL = "https://dataservice.accuweather.com";
@@ -34,8 +35,10 @@ const fetchWeatherForecast = (locationKey: string) => {
       rainProbability: number;
       sunData: SunData;
     }>((data) => {
-      const weather = data.DailyForecasts[0].Day;
       const sunData = data.DailyForecasts[0].Sun;
+
+      const moment = getMoment(sunData);
+      const weather = data.DailyForecasts[0][moment];
 
       return {
         description: data.Headline.Text,

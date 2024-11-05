@@ -48,7 +48,7 @@ function App() {
   }, [locationKey]);
 
   useEffect(() => {
-    setCurrentTheme(moment === "day" ? "light" : "dark");
+    setCurrentTheme(moment === "Day" ? "light" : "dark");
   }, [moment]);
 
   useEffect(() => {
