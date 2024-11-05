@@ -8,6 +8,7 @@ import useWeatherAPI from "@/hooks/useWeatherAPI";
 import { getMoment } from "@/utils/helpers";
 import { Pages } from "@/types";
 import { availableLocations } from "./utils/location-list";
+import { useRegisterSW } from "virtual:pwa-register/react";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -55,6 +56,8 @@ function App() {
     fetchData(locationKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useRegisterSW();
 
   return (
     <ThemeProvider theme={theme[currentTheme] as Theme}>
